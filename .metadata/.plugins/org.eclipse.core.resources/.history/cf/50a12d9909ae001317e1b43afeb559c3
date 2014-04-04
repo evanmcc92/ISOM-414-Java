@@ -1,0 +1,16 @@
+import javax.swing.*;
+
+public class Average1 {
+	public static void main(String arg[]){
+		int total, invoiceCounter, PCValue, systemAverage;
+		String pc;
+		
+		total = 0;
+		
+		invoiceCounter =1;
+		
+		while (invoiceCounter <= 10) {
+			
+		}
+	}
+}

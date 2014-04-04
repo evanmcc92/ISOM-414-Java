@@ -1,0 +1,21 @@
+
+import javax.swing.*;
+
+public class SalesLoop {
+	public static void main(String arg[]){
+		
+		String smonthlysales;
+
+		float total = 0;
+		float averageSale = 0;
+		
+		double nmonthlysales;
+		String output = "";
+		int counter = 0;
+		
+		
+		while (counter < 12) {
+			
+		}
+	}
+}

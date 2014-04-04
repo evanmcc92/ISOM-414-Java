@@ -1,0 +1,45 @@
+
+import java.awt.Container;
+
+import javax.swing.*;
+
+public class SalesLoop extends JApplet  {
+	public void init(){
+		
+
+		float total = 0;
+		float averageSale = 0;
+		
+		double nmonthlysales;
+		String output = "";
+		int counter = 0;
+		double discount = 0;
+		
+		
+		
+		JTextArea outputArea = new JTextArea(10,20);
+		Container c = getContentPane();
+		c.add(outputArea);
+		
+		
+		while (counter < 12) {
+			nmonthlysales = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter Monthly Sales"));
+			
+			total+=nmonthlysales;
+			counter++;
+		}
+		
+		if (total > 100000){
+			discount = .02 * total;
+		} else if (total > 400000) {
+			discount = .03 * total;
+		} else if (total > 700000) {
+			discount = .05 * total;
+		}
+		averageSale = total/12;
+		
+		output="Yearly Sales\n$"+total+"\n\nAverage Sales\n$" + averageSale+"\n\nDiscount\n$" + discount ;
+		
+		outputArea.setText(output);
+	}
+}

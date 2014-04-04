@@ -1,0 +1,50 @@
+import java.awt.Container;
+
+import javax.swing.*;
+
+
+public class electricgenerators extends JApplet{
+	public void init(){
+		JTextArea outputArea = new JTextArea(10,20);
+		Container c = getContentPane();
+		c.add(outputArea);
+		
+		
+		double present_prod, yearly_growth_rate, growth_years, total_growth, yearly_growth, year;
+		int counter1 = 1;
+		String output;
+		
+		present_prod = Double.parseDouble(JOptionPane.showInputDialog("Enter present production"));
+		year = Double.parseDouble(JOptionPane.showInputDialog("Enter year"));
+
+		outputArea.setText("Year\t\tPresent Value\t\tForecasted Value");
+
+		while (counter1 <= 5){
+			yearly_growth_rate = .03;
+			growth_years = 5;
+			total_growth = yearly_growth_rate * growth_years;
+			
+			
+			
+			
+			
+			year = year+counter1;
+			counter1++;
+			
+			output=year+"\t"+present_prod+"\tfuture";
+			
+			JOptionPane.showMessageDialog(null, output);
+			outputArea.setText(output);
+			
+		}
+	}
+}
+
+
+//final format
+//year		present			forecasted
+//2013		100				200
+//2014		200				500
+//2015		500				700
+
+//etc. present is the previous years forcasted

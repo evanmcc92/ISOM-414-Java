@@ -1,0 +1,26 @@
+
+import javax.swing.*;
+
+public class SalesLoop {
+	public static void main(String arg[]){
+		
+
+		float total = 0;
+		float averageSale = 0;
+		
+		double nmonthlysales;
+		String output = "";
+		int counter = 0;
+		
+		
+		while (counter < 12) {
+			nmonthlysales = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter Monthly Sales"));
+			
+			total+=nmonthlysales;
+			counter++;
+		}
+		
+		averageSale = total/12;
+		JOptionPane.showMessageDialog(null, "Yearly Sales is $"+total+" and the Average Sales is $" + averageSale);
+	}
+}
