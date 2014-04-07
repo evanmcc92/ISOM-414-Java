@@ -9,17 +9,19 @@ public class taxcalculator2 extends JApplet{
 	int x = 1;
 	int y = 25;
 	int z = 45;
-	int client = Integer.parseInt(JOptionPane.showInputDialog("Enter Number of Clients"));
+	int client =1;
 	int var1;
+	public void init(){
+		client = Integer.parseInt(JOptionPane.showInputDialog("Enter Number of Clients"));
+	}
+
+	
 	
 
 	public void paint(Graphics g){
-
 		
 		setSize(500,500);
-		
-		
-
+		g.drawString("ID\tEmployee Name\tTotal Sale\tCommission\tState Tax\tNet Income", 25,y);
 		while(counter1 <= client){
 
 			empid = JOptionPane.showInputDialog("Enter Employee ID");
@@ -52,6 +54,7 @@ public class taxcalculator2 extends JApplet{
 				break;
 			default:
 				commission = 0;
+				break;
 			}
 			
 			
@@ -59,7 +62,7 @@ public class taxcalculator2 extends JApplet{
 			netincome = netincome-(statetax * netincome);
 			
 			
-			g.drawString("ID\tEmployee Name\tTotal Sale\tCommission\tState Tax\tNet Income", 25,y);
+			
 			g.drawString(empid+"\t" +empname+"\t"+sales+"\t"+commission+"\t"+statetax+"\t"+netincome, 25,z);
 			
 			counter1++;
