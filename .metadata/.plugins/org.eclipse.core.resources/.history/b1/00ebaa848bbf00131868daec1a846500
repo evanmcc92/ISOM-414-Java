@@ -1,0 +1,70 @@
+import javax.swing.*;
+
+import java.awt.*;
+
+public class taxcalculator2 extends JApplet{
+	public static void main (String args[]){
+	//String sGrossincome, sRealstate, sNetincome;
+    
+    
+    double nGrossincome, nRealstate, nNetincome, tax=0, taxincome, RealExpenses, NetLoss, totalincome = 0, totalexpenses = 0,taxableincome;
+    
+    int incomecounter = 1;
+    
+    do{ 
+        //sGrossincome = JOptionPane.showInputDialog("Enter Gross Income");
+        //sRealstate = JOptionPane.showInputDialog("Enter Real State Income");
+        //sNetincome = JOptionPane.showInputDialog("Enter Net Investment Income");
+        
+        nGrossincome = Double.parseDouble(JOptionPane.showInputDialog("Enter Gross Income"));        
+        nRealstate = Double.parseDouble(JOptionPane.showInputDialog("Enter Real State Income"));    
+        nNetincome = Double.parseDouble(JOptionPane.showInputDialog("Enter Net Investment Income"));
+        
+        RealExpenses = Integer.parseInt(JOptionPane.showInputDialog("Enter Real State total expenses"));
+        NetLoss = Integer.parseInt(JOptionPane.showInputDialog("Enter Net loss in investment"));
+            
+        incomecounter = incomecounter + 1;
+        
+        taxincome = nGrossincome+nRealstate+nNetincome;
+        if (taxincome > 150000)
+        {
+            tax = .33;
+        }
+        else if (taxincome > 100000)
+        {
+            tax = .28;
+        }
+        else if (taxincome > 75000)
+        {
+            tax = .23;
+        }
+        else if (taxincome > 40000)
+        {
+            tax = .18;
+        }
+        else if (taxincome > 25000)
+        {
+            tax = .15;
+        }
+        else if (taxincome >= 15000)
+        {
+            tax = .12;
+        }
+        else
+        {
+            tax = 0;
+        }
+        
+
+        totalincome = nGrossincome + nRealstate + nNetincome;  //<<<< This is error
+        totalexpenses = RealExpenses + NetLoss;
+        taxableincome = totalincome - totalexpenses;
+        
+        
+        
+    } while (incomecounter <= 5);
+    
+    
+    JOptionPane.showMessageDialog(null," Total Income: "+totalincome + "\nTotal Expenses: "+totalexpenses + "\nTaxable Income: "+ taxableincome);
+}
+}
