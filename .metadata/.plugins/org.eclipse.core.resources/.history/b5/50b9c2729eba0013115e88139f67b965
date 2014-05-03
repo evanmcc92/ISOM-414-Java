@@ -1,9 +1,0 @@
-import javax.swing.*;
-
-import java.awt.*;
-
-public class electricgenerators extends JApplet{
-	public void init(){
-		
-	}
-}
